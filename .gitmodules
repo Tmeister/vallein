@@ -1,0 +1,3 @@
+[submodule "vendors"]
+	path = vendors
+	url = git@github.com:ReduxFramework/ReduxFramework.git
