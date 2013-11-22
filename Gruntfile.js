@@ -97,7 +97,44 @@ module.exports = function(grunt) {
       dist: [
         'assets/css/base.min.css',
         'assets/js/scripts.min.js'
-      ]
+      ],
+      deploy: {
+        expand: true,
+        cwd: "theme",
+        src: "CONTRIBUTING.md"
+      },
+      all:{
+        src: "theme"
+      }
+    },
+    copy:{
+      dist:{
+        files:[
+          {
+            src: [
+              '**',
+              '!*.md',
+              '!assets/less/bootstrap/**',
+              '!assets/less/font-awesome/**',
+              '!assets/js/plugins/**',
+              '!assets/js/_main.js',
+              '!assets/css/started/**',
+              '!node_modules/**',
+              '!Gruntfile.js',
+              '!package.json'
+            ],
+            dest:'theme/'
+          }
+        ]
+      },
+      deploy:{
+        files:[
+          {
+            src: ['theme/**'],
+            dest:'../'
+          }
+        ]
+      }
     }
   });
 
@@ -108,16 +145,24 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Register tasks
   grunt.registerTask('default', [
-    'clean',
+    'clean:dist',
     'less',
     'uglify',
     'version'
   ]);
   grunt.registerTask('dev', [
     'watch'
+  ]);
+  grunt.registerTask('deploy',[
+    'default',
+    'copy:dist',
+    'clean:deploy',
+    'copy:deploy',
+    'clean:all',
   ]);
 
 };
