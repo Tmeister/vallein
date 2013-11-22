@@ -98,13 +98,8 @@ module.exports = function(grunt) {
         'assets/css/base.min.css',
         'assets/js/scripts.min.js'
       ],
-      deploy: {
-        expand: true,
-        cwd: "theme",
-        src: "CONTRIBUTING.md"
-      },
       all:{
-        src: "theme"
+        src: ["theme", "theme.zip"]
       }
     },
     copy:{
@@ -130,8 +125,20 @@ module.exports = function(grunt) {
       deploy:{
         files:[
           {
-            src: ['theme/**'],
+            src: ['theme.zip'],
             dest:'../'
+          }
+        ]
+      }
+    },
+    compress:{
+      main:{
+        options: {
+          archive: "theme.zip"
+        },
+        files: [
+          {
+            src: "theme/**"
           }
         ]
       }
@@ -146,6 +153,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-wp-version');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-compress');
+
 
   // Register tasks
   grunt.registerTask('default', [
@@ -160,7 +169,7 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy',[
     'default',
     'copy:dist',
-    'clean:deploy',
+    'compress',
     'copy:deploy',
     'clean:all',
   ]);
