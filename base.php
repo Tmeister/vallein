@@ -1,4 +1,7 @@
-<?php get_template_part('templates/head'); ?>
+<?php
+  global $theme_options;
+  get_template_part('templates/head');
+?>
 <body <?php body_class(); ?>>
 
   <!--[if lt IE 8]>
@@ -17,17 +20,27 @@
     }
   ?>
 
-  <div class="wrap container" role="document">
+  <div class="wrap" role="document">
     <div class="content row">
+        <?php if (roots_display_sidebar() && $theme_options['layout'] == 2) : ?>
+          <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
+            <?php include roots_sidebar_path(); ?>
+          </aside><!-- /.sidebar -->
+        <?php endif; ?>
+
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
       </main><!-- /.main -->
-      <?php if (roots_display_sidebar()) : ?>
-        <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
-          <?php include roots_sidebar_path(); ?>
-        </aside><!-- /.sidebar -->
-      <?php endif; ?>
+
+        <?php if (roots_display_sidebar() && $theme_options['layout'] == 3) : ?>
+          <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
+            <?php include roots_sidebar_path(); ?>
+          </aside><!-- /.sidebar -->
+        <?php endif; ?>
+
     </div><!-- /.content -->
+
+
   </div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>

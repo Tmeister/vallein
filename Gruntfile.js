@@ -20,7 +20,7 @@ module.exports = function(grunt) {
           ]
         },
         options: {
-          compress: true,
+          compress: false,
           // LESS source map
           // To enable, set sourceMap to true and update sourceMapRootpath based on your install
           sourceMap: false,

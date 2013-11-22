@@ -1,0 +1,54 @@
+.vc_carousel {
+    .vc_pagination {
+         .swiper-pagination-switch {
+             display:inline-block;
+             width:8px;
+             height:8px;
+             border-radius:8px;
+             background:#222;
+             margin-right:5px;
+             opacity:0.8;
+             border:1px solid #fff;
+             cursor:pointer;
+         }
+         .swiper-visible-switch {
+             background:#aaa;
+         }
+         .swiper-active-switch {
+             background:#CCC;
+         }
+     }
+    .vc-arrow-right {
+        background: #CCC url(../images/carousel_arrows.png) no-repeat left bottom;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -15px;
+        width: 17px;
+        height: 30px;
+        z-index: 30000;
+    }
+    .vc-arrow-left {
+        display: none;
+        background: #CCC url(../images/carousel_arrows.png) no-repeat left top;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin-top: -15px;
+        width: 17px;
+        height: 30px;
+        z-index: 30000;
+    }
+    &.vc_carousel_vertical {
+        .vc_pagination {
+            position: absolute;
+            z-index: 20;
+            right: 10px;
+            top: 10px;
+            .swiper-pagination-switch {
+                display: block;
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
