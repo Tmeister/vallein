@@ -48,6 +48,10 @@ if (!class_exists('WPBakeryVisualComposerAbstract')) {
   $wpVC_setup->init($composer_settings);
 }
 
+/**
+ * Adding WP-LESS: No validation needed the code already do that
+ */
+require dirname(__FILE__) . '/../vendors/wp-less/bootstrap-for-theme.php';
 
 /**
 * Main Cendres Class
@@ -55,12 +59,14 @@ if (!class_exists('WPBakeryVisualComposerAbstract')) {
 class Cendres
 {
 
+    var $theme_options;
+
     function __construct()
     {
+        global $theme_options;
+        $this->theme_options = $theme_options;
         add_filter( 'cmb_meta_boxes',                       array( &$this, 'cmb_add_page_options') );
-        //add_filter( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG,     array( &$this, 'add_custom_container'), 10, 2 );
-        $this->map_test_shortcode();
-        add_shortcode( 'test_shortcode',                    array( &$this, 'test_shortcode') );
+        $this->config_less();
 
     }
 
@@ -68,42 +74,20 @@ class Cendres
         return $meta_boxes;
     }
 
-    function add_custom_container($classes, $base = 'lol'){
-        return $classes.' '.$base;
+    function config_less(){
+      if (class_exists('WPLessPlugin'))
+      {
+        $less = WPLessPlugin::getInstance();
+        $lessConfig = $less->getConfiguration();
+        $lessConfig->setUploadDir(get_template_directory()     . '/assets/css');
+        $lessConfig->setUploadUrl(get_template_directory_uri() . '/assets/css');
+        $this->set_less_variables();
+        $less->dispatch();
+      }
     }
-
-    function test_shortcode($atts){
-        extract( shortcode_atts( array(
-            'foo' => 'something',
-            'bar' => 'something else',
-        ), $atts ) );
-
-        $out  = '<section class="test_wrapper '. $foo.'">';
-        $out .= '<div class="container">';
-        $out .= '<h1>HELLOOOO</h1>';
-        $out .= '</div>';
-        $out .= '</section>';
-        return $out;
-    }
-    function map_test_shortcode(){
-      vc_map( array(
-         "name" => __("Bar tag test"),
-         "base" => "test_shortcode",
-         "class" => "",
-         "category" => __('Content'),
-         "is_container" => true,
-         "params" => array(
-            array(
-               "type" => "textfield",
-               "holder" => "div",
-               "class" => "",
-               "heading" => __("Text"),
-               "param_name" => "foo",
-               "value" => __("Default params value"),
-               "description" => __("Description for foo param.")
-            )
-         )
-      ) );
+    function set_less_variables(){
+      $less = WPLessPlugin::getInstance();
+      $less->addVariable('siteBgColor', $this->theme_options['siteBgColor']);
     }
 }
 new Cendres;

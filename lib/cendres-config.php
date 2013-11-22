@@ -112,19 +112,17 @@ $sections[] = array(
             'title'    => __('Main Layout', 'cendres'),
             'subtitle' => __('Select main content and sidebar alignment for the blog. Choose between left or right sidebar.', 'cendres'),
             'options'  => array(
-                    '1' => array('alt' => 'No Sidebar', 'img' => ReduxFramework::$_url.'assets/img/1col.png'),
-                    '2' => array('alt' => 'Left Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cl.png'),
-                    '3' => array('alt' => 'Right Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cr.png')
-                ),
-            'default' => '3'
+                '1' => array('alt' => 'No Sidebar', 'img' => ReduxFramework::$_url.'assets/img/1col.png'),
+                '2' => array('alt' => 'Left Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cl.png'),
+                '3' => array('alt' => 'Right Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cr.png')
             ),
-
+            'default' => '3'
+        ),
         array(
-            'id'       =>'footer-text',
-            'type'     => 'editor',
-            'title'    => __('Footer Text', 'cendres'),
-            'subtitle' => __('You can use the following shortcodes in your footer text: [wp-url] [site-url] [theme-url] [login-url] [logout-url] [site-title] [site-tagline] [current-year]', 'cendres'),
-            'default'  => 'Powered by [wp-url]. Built on the [theme-url].',
+            'id' => 'siteBgColor',
+            'type' => 'color',
+            'compiler' => true,
+            'default' => '#00ffff'
         )
     )
 );

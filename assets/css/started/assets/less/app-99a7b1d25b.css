@@ -1,0 +1,20 @@
+body {
+  background: #fff000;
+}
+.gallery-row {
+  padding: 15px 0;
+}
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
+figure.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+}

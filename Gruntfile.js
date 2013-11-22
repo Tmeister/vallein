@@ -15,12 +15,12 @@ module.exports = function(grunt) {
     less: {
       dist: {
         files: {
-          'assets/css/main.min.css': [
-            'assets/less/app.less'
+          'assets/css/base.min.css': [
+            'assets/less/base.less'
           ]
         },
         options: {
-          compress: false,
+          compress: true,
           // LESS source map
           // To enable, set sourceMap to true and update sourceMapRootpath based on your install
           sourceMap: false,
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
     version: {
       options: {
         file: 'lib/scripts.php',
-        css: 'assets/css/main.min.css',
+        css: 'assets/css/base.min.css',
         cssHandle: 'roots_main',
         js: 'assets/js/scripts.min.js',
         jsHandle: 'roots_scripts'
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
           livereload: false
         },
         files: [
-          'assets/css/main.min.css',
+          'assets/css/base.min.css',
           'assets/js/scripts.min.js',
           'templates/*.php',
           '*.php'
@@ -95,7 +95,7 @@ module.exports = function(grunt) {
     },
     clean: {
       dist: [
-        'assets/css/main.min.css',
+        'assets/css/base.min.css',
         'assets/js/scripts.min.js'
       ]
     }
