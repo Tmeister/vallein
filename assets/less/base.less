@@ -1,8 +1,119 @@
 /*!
- * Bootstrap
+ * Bootstrap & Font Awesome
  */
 @import "bootstrap/bootstrap";
 @import "font-awesome/font-awesome";
+
+/*!
+ * GeoPoint Base Styles
+ */
+
+body {
+   margin: 0px;
+   padding: 0px;
+   img{
+      width: 100%;
+      height: auto;
+   }
+}
+
+header{
+   .gp-main-nav{
+      display: inline-block;
+      float:right;
+      list-style-type: none;
+      margin: 0px;
+      padding:0px;
+      right: 0px;
+      font-size: 12px;
+      text-transform: uppercase;
+      li{
+         float:left;
+         margin-right: 10px;
+         a{
+            .transition( all 0.25s linear );
+            display: block;
+            line-height: 20px;
+            padding: 29px 10px;
+            text-decoration: none;
+            &:hover{
+               .transition( all 0.25s linear );
+               text-decoration: none;
+            }
+         }
+         &.open{
+            a{
+                text-decoration: none;
+            }
+         }
+         .dropdown-menu{
+            text-transform: none;
+            border-radius: 0px;
+            border:0 none;
+            font-size: 13px;
+            margin:0px;
+            padding: 0px;
+            li{
+                width: 100%;
+                margin: 0px;
+                a{
+                    display: block;
+                    padding: 10px;
+                    border-bottom:0 none !important;
+                    width: 100%;
+
+                }
+            }
+         }
+      }
+   }
+   &.default{
+      .top-nav{
+         font-size: 10px;
+         text-transform: uppercase;
+         line-height: 1;
+         .gp-top-nav{
+            display: inline-block;
+            list-style-type: none;
+            margin: 0px;
+            padding:0px;
+            li{
+               float:left;
+               margin-right: 10px;
+               a{
+                  display: block;
+                  padding: 10px 0;
+                  &:hover{
+                     text-decoration: none;
+                  }
+               }
+            }
+         }
+         #menu-top-right{
+            float: right;
+            right: 0px;
+         }
+      }
+      .logo-holder{
+         padding: 0;
+      }
+   }
+}
+
+
+#header-map{
+   width: 100%;
+   height: 550px;
+}
+
+
+
+
+
+
+.no-padding{
+    padding: 0px;
+}
 
 
 /* ==========================================================================

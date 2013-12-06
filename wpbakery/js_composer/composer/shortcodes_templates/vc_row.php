@@ -16,8 +16,6 @@ $css_class =  apply_filters(VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'wpb_row '.get_r
 //var_dump($this);
 
 $output .= '<section class="'.$css_class.' '.$use_parallax.'">';
-$output .= '<div class="container">';
 $output .= wpb_js_remove_wpautop($content);
-$output .= '</div>';
 $output .= '</section>';
 echo $output;

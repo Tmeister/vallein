@@ -11,7 +11,7 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/.
     require_once( dirname( __FILE__ ) . '/../vendors/ReduxFramework/ReduxCore/framework.php' );
 }
 if ( !isset( $cendres ) && file_exists( dirname( __FILE__ ) . '/../vendors/ReduxFramework/sample/sample-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/../lib/cendres-config.php' );
+    require_once( dirname( __FILE__ ) . '/../lib/theme-options-config.php' );
 }
 
 /**
@@ -54,9 +54,9 @@ if (!class_exists('WPBakeryVisualComposerAbstract')) {
 require dirname(__FILE__) . '/../vendors/wp-less/bootstrap-for-theme.php';
 
 /**
-* Main Cendres Class
+* Main GeoPoint Class
 */
-class Cendres
+class GeoPoint
 {
 
     var $theme_options;
@@ -66,15 +66,26 @@ class Cendres
         global $theme_options;
         $this->theme_options = $theme_options;
         add_filter( 'cmb_meta_boxes',                       array( &$this, 'cmb_add_page_options') );
+        add_action( 'after_setup_theme',                    array( &$this, 'add_theme_menus') );
         $this->config_less();
 
     }
 
-    function cmb_add_page_options( array $meta_boxes ) {
+    function add_theme_menus(){
+      register_nav_menus(array(
+        'top_left_navigation'  => __('Top Left Navigation', 'geopoint'),
+        'top_right_navigation' => __('Top right Navigation', 'geopoint'),
+
+      ));
+    }
+
+    function cmb_add_page_options( array $meta_boxes )
+    {
         return $meta_boxes;
     }
 
-    function config_less(){
+    function config_less()
+    {
       if (class_exists('WPLessPlugin'))
       {
         $less = WPLessPlugin::getInstance();
@@ -85,10 +96,12 @@ class Cendres
         $less->dispatch();
       }
     }
-    function set_less_variables(){
+
+    function set_less_variables()
+    {
       $less = WPLessPlugin::getInstance();
-      $less->addVariable('siteBgColor', $this->theme_options['siteBgColor']);
+      $less->addVariable('siteBgColor', $this->theme_options['site_bg_color']);
     }
 }
-new Cendres;
+new GeoPoint;
 

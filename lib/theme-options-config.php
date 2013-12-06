@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Cendres Configuration File.
+ * GeoPoint Configuration File.
  */
 
 $args = array();
@@ -16,7 +16,7 @@ $tags = $ct->Tags;
 $screenshot = $ct->get_screenshot();
 $class = $screenshot ? 'has-screenshot' : '';
 
-$customize_title = sprintf( __( 'Customize &#8220;%s&#8221;','cendres' ), $ct->display('Name') );
+$customize_title = sprintf( __( 'Customize &#8220;%s&#8221;','geopoint' ), $ct->display('Name') );
 
 ?>
 <div id="current-theme" class="<?php echo esc_attr( $class ); ?>">
@@ -35,14 +35,14 @@ $customize_title = sprintf( __( 'Customize &#8220;%s&#8221;','cendres' ), $ct->d
 
     <div>
         <ul class="theme-info">
-            <li><?php printf( __('By %s','cendres'), $ct->display('Author') ); ?></li>
-            <li><?php printf( __('Version %s','cendres'), $ct->display('Version') ); ?></li>
-            <li><?php echo '<strong>'.__('Tags', 'cendres').':</strong> '; ?><?php printf( $ct->display('Tags') ); ?></li>
+            <li><?php printf( __('By %s','geopoint'), $ct->display('Author') ); ?></li>
+            <li><?php printf( __('Version %s','geopoint'), $ct->display('Version') ); ?></li>
+            <li><?php echo '<strong>'.__('Tags', 'geopoint').':</strong> '; ?><?php printf( $ct->display('Tags') ); ?></li>
         </ul>
         <p class="theme-description"><?php echo $ct->display('Description'); ?></p>
         <?php if ( $ct->parent() ) {
             printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.' ) . '</p>',
-                __( 'http://codex.wordpress.org/Child_Themes','cendres' ),
+                __( 'http://codex.wordpress.org/Child_Themes','geopoint' ),
                 $ct->parent()->display( 'Name' ) );
         } ?>
 
@@ -56,7 +56,7 @@ ob_end_clean();
 
 $theme                          = wp_get_theme();
 
-$args['dev_mode']               = false;
+$args['dev_mode']               = true;
 $args['dev_mode_icon_class']    = 'icon-large';
 $args['opt_name']               = 'theme_options';
 $args['system_info']            = false;
@@ -64,9 +64,9 @@ $args['display_name']           = $theme->get('Name');
 $args['display_version']        = $theme->get('Version');
 $args['google_api_key']         = 'AIzaSyAX_2L_UzCDPEnAHTG7zhESRVpMPS4ssII';
 $args['default_icon_class']     = 'icon-large';
-$args['menu_title']             = __('Cendres Options', 'cendres');
-$args['page_title']             = __('Cendres Options', 'cendres');
-$args['page_slug']              = 'cendres_options';
+$args['menu_title']             = __('GeoPoint Options', 'geopoint');
+$args['page_title']             = __('GeoPoint Options', 'geopoint');
+$args['page_slug']              = 'geopoint_options';
 $args['default_show']           = true;
 $args['default_mark']           = '*';
 $args['show_import_export']     = false;
@@ -98,34 +98,51 @@ if ( is_dir( $sample_patterns_path ) ) :
 endif;
 
 
-
+/******************************************************************************
+* General Settings Tab
+******************************************************************************/
 
 $sections[] = array(
     'icon'       => 'el-icon-cogs',
     'icon_class' => 'icon-large',
-    'title'      => __('General Settings', 'cendres'),
+    'title'      => __('General Settings', 'geopoint'),
     'fields'     => array(
         array(
-            'id'       =>'layout',
-            'type'     => 'image_select',
-            'compiler' =>true,
-            'title'    => __('Main Layout', 'cendres'),
-            'subtitle' => __('Select main content and sidebar alignment for the blog. Choose between left or right sidebar.', 'cendres'),
-            'options'  => array(
-                '1' => array('alt' => 'No Sidebar', 'img' => ReduxFramework::$_url.'assets/img/1col.png'),
-                '2' => array('alt' => 'Left Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cl.png'),
-                '3' => array('alt' => 'Right Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cr.png')
-            ),
-            'default' => '3'
+            'id'       => 'site_bg_color',
+            'type'     => 'color',
+            'compiler' => true,
+            'default'  => '#ffffff',
+            'title'    => __('Site Background Color.', 'geopoint'),
+            'subtitle' => __('Select main color to use as background for the entired site.', 'geopoint'),
         ),
         array(
-            'id' => 'siteBgColor',
-            'type' => 'color',
+            'id'       => 'site_logo',
+            'type'     => 'media',
+            'url'      => true,
             'compiler' => true,
-            'default' => '#00ffff'
-        )
+            'title'    => __('Site Background Color.', 'geopoint'),
+            'subtitle' => __('Select main color to use as background for the entired site.', 'geopoint'),
+        ),
+        array(
+            'id'       =>'site_header_style',
+            'type'     => 'select',
+            'title'    => __('Site Header Style', 'geopoint'),
+            'subtitle' => __('Select the header style for the site', 'geopoint'),
+            'desc'     => __('GeoPoint comes with 4 different header styles.<br>1.- Default - Desc - Link<br>2.- Search on top - Desc - Link<br>3.- Default - Desc - Link<br>4.- Default - Desc - Link', 'geopoint'),
+            'options' => array(
+                'default' => 'Default',
+                'logo-on-top' => 'Option 2',
+                '3' => 'Options 3',
+                '4' => '=ptions 4',
+            ),
+            'default' => 'default'
+        ),
+
     )
 );
+
+
+
 
 
 
@@ -133,7 +150,7 @@ if(file_exists(trailingslashit(dirname(__FILE__)) . 'README.html')) {
     $tabs['docs'] = array(
         'icon'       => 'el-icon-book',
         'icon_class' => 'icon-large',
-        'title'      => __('Documentation', 'cendres'),
+        'title'      => __('Documentation', 'geopoint'),
         'content'    => nl2br(file_get_contents(trailingslashit(dirname(__FILE__)) . 'README.html'))
     );
 }

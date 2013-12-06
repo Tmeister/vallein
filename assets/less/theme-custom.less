@@ -1,26 +1,88 @@
-/* ==========================================================================
-   Base
-   ========================================================================== */
+/*!
+ * GeoPoint Custom Color // Admin Options Less Compiler.
+ */
+
+@topNavBg = #00B7F1;
+@topNavColor = white;
+
+@menuColor = #838383;
+@menuColorHover = #00B7F1;
+
 
 body {
    background: @siteBgColor;
 }
 
-
-
-/* ==========================================================================
-   Header
-   ========================================================================== */
-
-.banner { }
-
-
-
-/* ==========================================================================
-   Content
-   ========================================================================== */
-
-.content { }
+header{
+   .gp-main-nav{
+      li{
+         a{
+            border-bottom: 2px solid white;
+            color:@menuColor;
+            &:hover{
+               border-bottom: 2px solid @menuColorHover;
+               color:@menuColorHover;
+               .caret{
+                  border-top: 4px solid @menuColorHover;
+               }
+            }
+            .caret{
+               border-top: 4px solid @menuColor;
+            }
+         }
+         &.active,
+         &.open{
+            a{
+               border-bottom: 2px solid @menuColorHover;
+               color:@menuColorHover;
+               .caret{
+                  border-top: 4px solid @menuColorHover;
+               }
+            }
+         }
+         &.open{
+            a{
+               border-bottom: 2px solid white !important;
+            }
+         }
+         .dropdown-menu{
+            background-color: @menuColorHover;
+            li{
+                a{
+                  color: rgba(255, 255, 255, .9);
+                  border-bottom: 1px solid rgba( 0, 0, 0, .05 ) !important;
+                  &:hover,
+                  &:focus{
+                     color: @menuColorHover;
+                     color: rgba(255, 255, 255, 1);
+                     background-color: rgba(0, 0, 0, 0.1);
+                  }
+                }
+                &.active{
+                  a{
+                      color: @menuColorHover;
+                     color: rgba(255, 255, 255, 1);
+                     background-color: rgba(0, 0, 0, 0.1) !important;
+                  }
+                }
+            }
+         }
+      }
+   }
+   &.default{
+      .top-nav{
+         background: @topNavBg;
+         color: @topNavColor;
+         .gp-top-nav{
+            li{
+               a{
+                  color:@topNavColor;
+               }
+            }
+         }
+      }
+   }
+}
 
 
 
