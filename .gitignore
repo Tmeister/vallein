@@ -3,3 +3,4 @@
 node_modules
 assets/css/started/*
 .DS_Store
+/assets/css/vallein/
