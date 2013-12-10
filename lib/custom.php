@@ -101,6 +101,7 @@ class GeoPoint
     {
       $less = WPLessPlugin::getInstance();
       $less->addVariable('siteBgColor', $this->theme_options['site_bg_color']);
+
     }
 }
 new GeoPoint;

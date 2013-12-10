@@ -2,16 +2,18 @@
  * GeoPoint Custom Color // Admin Options Less Compiler.
  */
 
-@topNavBg = #00B7F1;
-@topNavColor = white;
+@accentColor    = #00B7F1;
+@topNavBg       = @accentColor;
+@menuColorHover = @accentColor;
 
-@menuColor = #838383;
-@menuColorHover = #00B7F1;
+@topNavColor    = white;
+@menuColor      = #838383;
 
 
 body {
    background: @siteBgColor;
 }
+
 
 header{
    .gp-main-nav{
@@ -65,6 +67,32 @@ header{
                      background-color: rgba(0, 0, 0, 0.1) !important;
                   }
                 }
+            }
+         }
+      }
+   }
+   &.search-on-top{
+      .search-form{
+         .form-control
+         {
+            background-image: url( '@{template_directory_uri}/assets/img/search-icon@2x.png');
+            background-color: #f5f5f5;
+            background-repeat: no-repeat;
+            background-size: 14px 14px;
+            background-position: 98% center;
+         }
+         .search-submit{
+            &.btn-default{
+               color:white;
+               background: @accentColor;
+               border: 1px solid @accentColor;
+            }
+         }
+      }
+      .gp-top-nav{
+         li{
+            a{
+               color:@menuColor;
             }
          }
       }
@@ -134,3 +162,8 @@ header{
 .alignleft { float: left; }
 .alignright { float: right; }
 figure.alignnone { margin-left: 0; margin-right: 0; }
+.wp-caption{text-align: left;}
+.wp-caption-text {text-align: left;}
+.gallery-caption {text-align: left;}
+.bypostauthor{text-align: left;}
+

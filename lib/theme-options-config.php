@@ -128,12 +128,10 @@ $sections[] = array(
             'type'     => 'select',
             'title'    => __('Site Header Style', 'geopoint'),
             'subtitle' => __('Select the header style for the site', 'geopoint'),
-            'desc'     => __('GeoPoint comes with 4 different header styles.<br>1.- Default - Desc - Link<br>2.- Search on top - Desc - Link<br>3.- Default - Desc - Link<br>4.- Default - Desc - Link', 'geopoint'),
+            'desc'     => __('GeoPoint comes with 2 different header styles.<br>1.- Default - Desc - Link<br>2.- Search on top - Desc - Link', 'geopoint'),
             'options' => array(
                 'default' => 'Default',
-                'logo-on-top' => 'Option 2',
-                '3' => 'Options 3',
-                '4' => '=ptions 4',
+                'logo-on-top' => 'Option 2'
             ),
             'default' => 'default'
         ),
