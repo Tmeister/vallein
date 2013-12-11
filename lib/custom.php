@@ -1,23 +1,11 @@
 <?php
-/**
- * Adding the Redux Framework and Theme Configuration Panel
- */
-if (!class_exists('ReduxFramework') && file_exists(dirname(__FILE__) . '/../vendors/ReduxFramework/ReduxCore/framework.php')) {
-	require_once (dirname(__FILE__) . '/../vendors/ReduxFramework/ReduxCore/framework.php');
-}
-if (!isset($cendres) && file_exists(dirname(__FILE__) . '/../lib/theme-options-config.php')) {
-	require_once (dirname(__FILE__) . '/../lib/theme-options-config.php');
-}
-/**
- * Adding WP-LESS: No validation needed the code already do that
- */
-require dirname(__FILE__) . '/../vendors/wp-less/bootstrap-for-theme.php';
+
 /**
  * Main GeoPoint Class
  */
 class GeoPoint
 {
-	var $theme_options;
+	/*var $theme_options;
 	function __construct()
 	{
 		global $theme_options;
@@ -49,6 +37,6 @@ class GeoPoint
 	{
 		$less = WPLessPlugin::getInstance();
 		$less->addVariable('siteBgColor', $this->theme_options['site_bg_color']);
-	}
+	}*/
 }
 new GeoPoint;
