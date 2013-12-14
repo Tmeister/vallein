@@ -47,8 +47,15 @@ class GeoPoint
 	}
 	function set_less_variables()
 	{
+		$font = $this->theme_options['site_typo'];
+		$site_font = $font['font-weight'] .' ' . $font['font-size']. ' "' . $font['font-family'] .'", Arial, Helvetica, sans-serif';
+		$font_color = $font['color'];
 		$less = WPLessPlugin::getInstance();
+		$less->addVariable('siteFont', "$site_font");
+		$less->addVariable('siteFontColor', "$font_color");
 		$less->addVariable('siteBgColor', $this->theme_options['site_bg_color']);
+		$less->addVariable('accentColor', $this->theme_options['accent_color']);
+
 	}
 }
 new GeoPoint;

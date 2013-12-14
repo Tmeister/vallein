@@ -109,16 +109,44 @@ $sections[] = array(
         array(
             'id'       => 'site_bg_color',
             'type'     => 'color',
-            'compiler' => true,
             'default'  => '#ffffff',
             'title'    => __('Site Background Color.', 'geopoint'),
             'subtitle' => __('Select main color to use as background for the entired site.', 'geopoint'),
         ),
         array(
+            'id'       => 'accent_color',
+            'type'     => 'color',
+            'default'  => '#9295CA',
+            'title'    => __('Site Accent Color.', 'geopoint'),
+            'subtitle' => __('Select accent color to use in the site.', 'geopoint'),
+        ),
+
+        array(
+			'id'=>'site_typo',
+			'type' => 'typography',
+			'title' => __('Site Typography', 'geopoint'),
+			'google'=>true, // Disable google fonts. Won't work if you haven't defined your google api key
+			'font-backup'=>false, // Select a backup non-google font in addition to a google font
+			'font-size'=>true,
+			'color'=>true,
+			'line-height' => false,
+			'all_styles' => true, // Enable all Google Font style/weight variations to be added to the page
+			'output' => array('h2.site-description'), // An array of CSS selectors to apply this font style to dynamically
+			'units'=>'px', // Defaults to px
+			'subtitle'=> __('Typography option with each property can be called individually.', 'geopoint'),
+			'default'=> array(
+				'color'=>"#838383",
+				'font-style'=>'300',
+				'font-family'=>'Open Sans',
+				'google' => true,
+				'font-size'=>'16px',
+				'line-height'=>'40px',
+			)
+		),
+        array(
             'id'       => 'site_logo',
             'type'     => 'media',
             'url'      => true,
-            'compiler' => true,
             'title'    => __('Site Background Color.', 'geopoint'),
             'subtitle' => __('Select main color to use as background for the entired site.', 'geopoint'),
         ),

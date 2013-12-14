@@ -2,7 +2,7 @@
  * GeoPoint Custom Color // Admin Options Less Compiler.
  */
 
-@accentColor    = #00B7F1;
+//@accentColor    = #9295CA;
 @topNavBg       = @accentColor;
 @menuColorHover = @accentColor;
 
@@ -11,64 +11,82 @@
 
 
 body {
-   background: @siteBgColor;
+	background: @siteBgColor;
+	font: @siteFont;
+	color: @siteFontColor;
+	a{
+		color:@accentColor;
+		&:hover{
+			color:@accentColor;
+			text-decoration: underline;
+		}
+	}
 }
 
 
+
 header{
+	.main-nav{
+		background: white;
+		box-shadow: 0px 1px 5px rgba(0,0,0, .1);
+	}
    .gp-main-nav{
-      li{
-         a{
-            border-bottom: 2px solid white;
-            color:@menuColor;
-            &:hover{
-               border-bottom: 2px solid @menuColorHover;
-               color:@menuColorHover;
-               .caret{
-                  border-top: 4px solid @menuColorHover;
-               }
-            }
-            .caret{
-               border-top: 4px solid @menuColor;
-            }
-         }
-         &.active,
-         &.open{
-            a{
-               border-bottom: 2px solid @menuColorHover;
-               color:@menuColorHover;
-               .caret{
-                  border-top: 4px solid @menuColorHover;
-               }
-            }
-         }
-         &.open{
-            a{
-               border-bottom: 2px solid white !important;
+		li{
+			a{
+	            border-bottom: 2px solid white;
+	            color:@menuColor;
+	            &:hover{
+	               border-bottom: 2px solid @menuColorHover;
+	               color:@menuColorHover;
+	               .caret{
+	                  border-top: 4px solid @menuColorHover;
+	               }
+	            }
+            	.caret{
+               		border-top: 4px solid @menuColor;
+            	}
+         	}
+
+         	&.active,
+         	&.open{
+            	a{
+               		border-bottom: 2px solid @menuColorHover;
+               		color:@menuColorHover;
+               		.caret{
+					border-top: 4px solid @menuColorHover;
+				}
             }
          }
-         .dropdown-menu{
-            background-color: @menuColorHover;
+
+		&.open{
+			a{
+				border-bottom: 2px solid white !important;
+            }
+         }
+		.dropdown-menu{
+			background-color: white;
+			border-top: 1px solid rgba( 0, 0, 0, .05 );
+			border-bottom: 3px solid @accentColor;
             li{
-                a{
-                  color: rgba(255, 255, 255, .9);
-                  border-bottom: 1px solid rgba( 0, 0, 0, .05 ) !important;
-                  &:hover,
-                  &:focus{
-                     color: @menuColorHover;
-                     color: rgba(255, 255, 255, 1);
-                     background-color: rgba(0, 0, 0, 0.1);
-                  }
+				a{
+					color: @menuColor;
+					border-bottom: 1px solid rgba( 0, 0, 0, .05 ) !important;
+					&:hover,
+					&:focus{
+						color: @menuColorHover;
+						color: @accentColor;
+						background-color: rgba(0, 0, 0, .01);
+					}
                 }
                 &.active{
-                  a{
-                      color: @menuColorHover;
-                     color: rgba(255, 255, 255, 1);
-                     background-color: rgba(0, 0, 0, 0.1) !important;
-                  }
+					a{
+						color: @menuColorHover;
+						color: rgba(255, 255, 255, 1);
+						background-color: rgba(0, 0, 0, 0.1) !important;
+                  	}
                 }
             }
-         }
+        }
       }
    }
    &.search-on-top{
@@ -111,6 +129,47 @@ header{
       }
    }
 }
+
+/*!
+ * Info Box
+ */
+
+.ec-info-box{
+	.circle-icon{
+		box-shadow: 0 0 0 4px @accentColor;
+		.fa{
+			color:@siteBgColor;
+		}
+		&:hover{
+			.fa{
+				color:@accentColor;
+			}
+		}
+		&:after{
+			background: @accentColor;
+		}
+	}
+	.info-title{
+		a{
+			color: @siteFontColor;
+			&:hover{
+				color: @accentColor;
+				text-decoration: none;
+			}
+		}
+	}
+	&.image-media{
+		.media{
+			.mask{
+				background-color: @accentColor;
+				background-image: url( '@{template_directory_uri}/assets/img/plus-border@2x.png');
+			}
+		}
+	}
+}
+
+
+
 
 
 

@@ -89,7 +89,8 @@ module.exports = function(grunt) {
           'assets/css/base.min.css',
           'assets/js/scripts.min.js',
           'templates/*.php',
-          '*.php'
+          '*.php',
+          '*.less'
         ]
       }
     },

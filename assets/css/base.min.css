@@ -7334,6 +7334,117 @@ td.visible-print {
   content: "\f196";
 }
 /*!
+ * Info Box
+ */
+.ec-info-box {
+  text-align: center;
+}
+.ec-info-box.image-media {
+  border: 1px solid #EAEAEA;
+  text-align: left;
+}
+.ec-info-box.image-media .info-data {
+  position: relative;
+  background: #F9F9F9;
+  display: inline-block;
+  padding: 0 15px;
+}
+.ec-info-box.image-media .info-data p {
+  margin: 0 0 0;
+  padding: 0 0 11px;
+}
+.ec-info-box.image-media .indicator-up {
+  border-bottom: 15px solid #F9F9F9;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  height: 0;
+  right: 20px;
+  top: -15px;
+  position: absolute;
+  width: 0;
+  z-index: 10;
+}
+.ec-info-box.image-media .media {
+  position: relative;
+}
+.ec-info-box.image-media .media .mask {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  display: block;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 9;
+  text-align: center;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 57px 57px;
+}
+.ec-info-box.image-media .media:hover .mask {
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.ec-info-box .circle-icon {
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #f2f2f2;
+  height: 90px;
+  margin: 0 auto;
+  position: relative;
+  width: 90px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.ec-info-box .circle-icon .fa {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  color: white;
+  font-size: 50px;
+  margin-top: 20px;
+}
+.ec-info-box .circle-icon:hover .fa {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  color: #f2f2f2;
+}
+.ec-info-box .circle-icon:hover:after {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(1.35);
+  -ms-transform: scale(1.35);
+  transform: scale(1.35);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.ec-info-box .circle-icon:after {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background: #f2f2f2;
+  border-radius: 50%;
+  content: '';
+  height: 94px;
+  left: -2px;
+  position: absolute;
+  top: -2px;
+  z-index: -1;
+  width: 94px;
+}
+.ec-info-box .info-title {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+.ec-info-box .description {
+  font-size: 1em;
+}
+.ec-info-box .learn-more {
+  text-transform: uppercase;
+}
+/*!
  * GeoPoint Base Styles
  */
 body {
@@ -7343,6 +7454,12 @@ body {
 body img {
   width: 100%;
   height: auto;
+}
+/*!
+ * Header and Menu
+ */
+header {
+  margin-bottom: 30px;
 }
 header .gp-main-nav {
   display: inline-block;
@@ -7457,8 +7574,8 @@ header.search-on-top .main-nav-with-search #menu-top-right {
 }
 header.default .top-nav {
   font-size: 10px;
-  text-transform: uppercase;
   line-height: 1;
+  text-transform: uppercase;
 }
 header.default .top-nav .gp-top-nav {
   display: inline-block;
@@ -7483,10 +7600,6 @@ header.default .top-nav #menu-top-right {
 }
 header.default .logo-holder {
   padding: 0;
-}
-#header-map {
-  width: 100%;
-  height: 550px;
 }
 .no-padding {
   padding: 0px;
