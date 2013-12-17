@@ -5,9 +5,37 @@
 //@accentColor    = #9295CA;
 @topNavBg       = @accentColor;
 @menuColorHover = @accentColor;
-
 @topNavColor    = white;
 @menuColor      = #838383;
+/*!
+* Default color for Progress Bar Section
+*/
+@globalBlue 	= #21c2f8;
+@globalOrange   = #ffaa00;
+@globalGreen    = #44d345;
+@globalGrey     = #9aa7af;
+@globalRed      = #ed1c24;
+@globalBlack    = #2f383d;
+/*!
+* Default color for Info Messages Section
+*/
+
+@messageInfoBg = #bceeff;
+@messageInfoColor = #21c2f8;
+@messageInfoBorder = #8ae1ff;
+
+@messageSuccessBg = #c1faa8;
+@messageSuccessColor = #6db74c;
+@messageSuccessBorder = #9cff70;
+
+@messageErrorBg = #ffcdc7;
+@messageErrorColor = #ff391f;
+@messageErrorBorder = #dcdcdc;
+
+@messageWarningBg = #fff4bb;
+@messageWarningColor = #e99b00;
+@messageWarningBorder = #ffcc66;
+
 
 
 body {
@@ -23,7 +51,16 @@ body {
 	}
 }
 
+blockquote{
+	font-style: italic !important;
+	border-left: 5px solid @accentColor;
+	background-color: #f6f6f6;
+	font-size: 1.05em;
+	p{
+		font-size: 1.05em;
+	}
 
+}
 
 header{
 	.main-nav{
@@ -70,7 +107,7 @@ header{
             li{
 				a{
 					color: @menuColor;
-					border-bottom: 1px solid rgba( 0, 0, 0, .05 ) !important;
+					border-bottom: 1px solid @borderColor !important;
 					&:hover,
 					&:focus{
 						color: @menuColorHover;
@@ -168,9 +205,220 @@ header{
 	}
 }
 
+/*!
+ * General Blocks
+ */
 
+/*!
+ * Text Title
+ */
 
+.vc_text_separator{
+	background: url( '@{template_directory_uri}/assets/img/patterns/pattern-stripes.png') no-repeat 50% 50%;
+	border-bottom:0 none !important;
+	display: inline-block;
+	height: 100% !important;
+	left: 0px;
+	top: 0px;
+	width: 100% !important;
+ 	background-repeat: repeat-x;
+	/*The title Div*/
+	div{
+		display: inline-table !important;
+		font-size: 1.5em;
+		font-weight: 700;
+		left: 0px !important;
+		padding: 0px 1.5em 0 0 !important;
+		top: 0px !important;
+	}
+	&.separator_align_center{
+		div{
+			padding: 0px 1.5em!important;
+		}
+	}
+	&.separator_align_right{
+		div{
+			padding: 0px 0  0 1.5em!important;
+		}
+	}
+}
 
+/*!
+ * Tabs
+ */
+.wpb_tabs{
+	.wpb_tour_tabs_wrapper{
+		.wpb_tab{
+			background-color: @siteBgColor !important;
+			border: 1px solid @borderColor;
+			padding: 2em !important;
+		}
+	}
+	.wpb_tabs_nav {
+		li{
+			background-color: @accentColor !important;
+			border-bottom: 1px solid @accentColor;
+			border-left: 1px solid @accentColor;
+			border-right: 1px solid @accentColor;
+			border-top: 1px solid @accentColor;
+			font-size: 1.3em !important;
+			font-weight: 400;
+			margin: 0 3px 0 0 !important;
+			position: relative;
+			top:1px !important;
+			a{
+				color: @siteBgColor !important;
+				padding: .75em 1.5em!important;
+			}
+			&.ui-tabs-active{
+				background-color: @siteBgColor !important;
+				border-bottom: 1px solid @siteBgColor;
+				border-left: 1px solid @borderColor;
+				border-right: 1px solid @borderColor;
+				border-top: 1px solid @borderColor;
+				top: 1px;
+				a{
+					color: @accentColor !important;
+				}
+			}
+		}
+	}
+}
+
+/*!
+ * Tabs Tour
+ */
+.wpb_tour{
+	.wpb_tour_tabs_wrapper{
+		.wpb_tab{
+			background-color: @siteBgColor !important;
+			border: 1px solid @borderColor;
+			padding: 0 2em !important;
+		}
+	}
+	.wpb_tabs_nav {
+		li{
+			background-color: @siteBgColor !important;
+			border-bottom: 1px solid @siteBgColor;
+			border-left: 1px solid @siteBgColor;
+			border-right: 1px solid @siteBgColor;
+			border-top: 1px solid @siteBgColor;
+			font-size: 1.3em !important;
+			font-weight: 400;
+			margin: 0 3px 0 0 !important;
+			position: relative;
+			top:1px !important;
+			a{
+				color: @accentColor !important;
+				padding: .5em 1em!important;
+			}
+			&.ui-tabs-active{
+				background-color: @accentColor !important;
+				border-bottom: 1px solid @accentColor;
+				border-left: 1px solid @accentColor;
+				border-right: 1px solid @accentColor;
+				border-top: 1px solid @accentColor;
+				top: 1px;
+				a{
+					color: @siteBgColor !important;
+				}
+			}
+		}
+	}
+}
+
+/*!
+ * Progress Bar
+ */
+
+.vc_progress_bar {
+	.vc_single_bar{
+		position: relative;
+		margin-bottom: 30px !important;
+		&.bar_blue{
+			.vc_bar{
+				background-color: @globalBlue !important;
+			}
+		}
+		&.bar_black{
+			.vc_bar{
+				background-color: @globalBlack !important;
+			}
+		}
+		&.bar_red{
+			.vc_bar{
+				background-color: @globalRed !important;
+			}
+		}
+		&.bar_grey{
+			.vc_bar{
+				background-color: @globalGrey !important;
+			}
+			.vc_label{
+				color: white !important;
+			}
+		}
+		&.bar_green{
+			.vc_bar{
+				background-color: @globalGreen !important;
+			}
+		}
+		&.bar_orange{
+			.vc_bar{
+				background-color: @globalOrange !important;
+			}
+		}
+	}
+	.vc_label{
+		font-size: 1em !important;
+	}
+	.vc_label_units{
+		padding: 0.5em 1em;
+		float: right;
+		right: 10px;
+		color: white;
+	}
+}
+/*!
+ * Alerts
+ */
+.wpb_alert{
+	background-color: @messageWarningBg !important;
+	border-color: @messageWarningBorder !important;
+	color:@messageWarningColor !important;
+	.messagebox_text{
+		background: url( '@{template_directory_uri}/assets/img/icons/warning.png') no-repeat 0% 50% !important;
+		background-size: 18px 18px !important;
+	}
+}
+.wpb_alert-info{
+	background-color: @messageInfoBg !important;
+	border-color: @messageInfoBorder !important;
+	color:@messageInfoColor !important;
+	.messagebox_text{
+		background: url( '@{template_directory_uri}/assets/img/icons/info.png') no-repeat 0% 50% !important;
+		background-size: 14px 18px !important;
+	}
+}
+.wpb_alert-success{
+	background-color: @messageSuccessBg !important;
+	border-color: @messageSuccessBorder !important;
+	color:@messageSuccessColor !important;
+	.messagebox_text{
+		background: url( '@{template_directory_uri}/assets/img/icons/success.png') no-repeat 0% 50% !important;
+		background-size: 18px 18px !important;
+	}
+}
+.wpb_alert-danger,
+.wpb_alert-error{
+	background-color: @messageErrorBg !important;
+	border-color: @messageErrorBorder !important;
+	color:@messageErrorColor !important;
+	.messagebox_text{
+		background: url( '@{template_directory_uri}/assets/img/icons/error.png') no-repeat 0% 50% !important;
+		background-size: 18px 18px !important;
+	}
+}
 
 
 /* ==========================================================================

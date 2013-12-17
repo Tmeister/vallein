@@ -120,6 +120,15 @@ $sections[] = array(
             'title'    => __('Site Accent Color.', 'geopoint'),
             'subtitle' => __('Select accent color to use in the site.', 'geopoint'),
         ),
+        array(
+            'id'       => 'border_color',
+            'type'     => 'color',
+            'default'  => '#d3d3d3',
+            'title'    => __('Border Color.', 'geopoint'),
+            'subtitle' => __('Select border color to use in the site. This color will be use in the tabs, accordions borders around the site.', 'geopoint'),
+        ),
+
+
 
         array(
 			'id'=>'site_typo',

@@ -7393,10 +7393,10 @@ td.visible-print {
 .ec-info-box .circle-icon {
   border-radius: 50%;
   box-shadow: 0 0 0 4px #f2f2f2;
-  height: 90px;
+  height: 60px;
   margin: 0 auto;
   position: relative;
-  width: 90px;
+  width: 60px;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
@@ -7404,8 +7404,8 @@ td.visible-print {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
   color: white;
-  font-size: 50px;
-  margin-top: 20px;
+  font-size: 30px;
+  margin-top: 16px;
 }
 .ec-info-box .circle-icon:hover .fa {
   -webkit-transition: all 0.2s linear;
@@ -7427,22 +7427,75 @@ td.visible-print {
   background: #f2f2f2;
   border-radius: 50%;
   content: '';
-  height: 94px;
+  height: 64px;
   left: -2px;
   position: absolute;
   top: -2px;
   z-index: -1;
-  width: 94px;
+  width: 64px;
 }
 .ec-info-box .info-title {
-  font-size: 1.25em;
+  font-size: 1.1em;
   font-weight: 400;
+  text-transform: uppercase;
 }
 .ec-info-box .description {
   font-size: 1em;
 }
 .ec-info-box .learn-more {
   text-transform: uppercase;
+}
+/*!
+ * Call to action
+ */
+.ec-call-to-action h2 {
+  font-size: 1.7em;
+  padding: 20px;
+  margin: 15px 0;
+}
+.ec-call-to-action .call-text {
+  display: inline-block;
+  float: left;
+  width: 75%;
+  background: #f2f2f2;
+}
+.ec-call-to-action .call-text h2 {
+  padding-right: 0px;
+}
+.ec-call-to-action .call-button {
+  display: inline-block;
+  width: 25%;
+  background: black;
+  position: relative;
+}
+.ec-call-to-action .call-button a {
+  text-decoration: none;
+}
+.ec-call-to-action .call-button a h2 {
+  text-align: center;
+}
+.ec-call-to-action .call-button .tab-pointer {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.ec-call-to-action .call-button .tab-pointer .triangle {
+  border-top-width: 49px;
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-bottom-width: 49px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  border-left-width: 30px;
+  border-left-style: solid;
+  border-left-color: #f2f2f2;
+}
+.with-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 35px;
 }
 /*!
  * GeoPoint Base Styles

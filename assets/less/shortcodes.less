@@ -56,16 +56,16 @@
  	.circle-icon{
  		border-radius: 50%;
  		box-shadow: 0 0 0 4px #f2f2f2;
- 		height: 90px;
+ 		height: 60px;
  		margin: 0 auto;
  		position: relative;
- 		width: 90px;
+ 		width: 60px;
  		.transition(all 0.2s linear);
  		.fa{
  			.transition(all 0.2s linear);
  			color: white;
- 			font-size: 50px;
- 			margin-top: 20px;
+ 			font-size: 30px;
+ 			margin-top: 16px;
  		}
  		&:hover{
  			.fa{
@@ -83,17 +83,18 @@
 	        background: #f2f2f2;
 	        border-radius: 50%;
 	        content: '';
-	        height: 94px;
+	        height: 64px;
 	        left: -2px;
 	        position: absolute;
 	        top:-2px;
 	        z-index: -1;
- 			width: 94px;
+ 			width: 64px;
  		}
  	}
  	.info-title{
- 		font-size: 1.25em;
+ 		font-size: 1.1em;
  		font-weight: 400;
+ 		text-transform: uppercase;
 
  	}
  	.description{
@@ -103,3 +104,62 @@
  		text-transform: uppercase;
  	}
  }
+
+ /*!
+ * Call to action
+ */
+
+.ec-call-to-action{
+	h2{
+		font-size: 1.7em;
+		padding: 20px;
+		margin: 15px 0;
+	}
+	.call-text{
+		display: inline-block;
+		float: left;
+		width: 75%;
+		background: #f2f2f2;
+		h2{
+			padding-right: 0px;
+		}
+	}
+	.call-button{
+		display: inline-block;
+		width: 25%;
+		background: black;
+		position: relative;
+		a{
+			text-decoration: none;
+			h2{
+				text-align: center;
+			}
+		}
+		.tab-pointer {
+			position: absolute;
+			width: 50px;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+
+			.triangle{
+				border-top-width: 49px;
+				border-top-style: solid;
+				border-top-color: transparent;
+				border-bottom-width: 49px;
+				border-bottom-style: solid;
+				border-bottom-color: transparent;
+				border-left-width: 30px;
+				border-left-style: solid;
+				border-left-color: #f2f2f2;
+			}
+		}
+	}
+}
+
+.with-border{
+	border-top: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	padding-top: 35px;
+}
+
