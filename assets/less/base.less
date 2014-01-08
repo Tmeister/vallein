@@ -19,6 +19,25 @@ body {
 }
 
 /*!
+ * Boxed Layout
+ */
+
+.boxed{
+	&.container{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.container{
+		margin-right: auto;
+		margin-left: auto;
+		padding-left: 0px;
+		padding-right: 0px;
+		width: 100%;
+	}
+}
+
+
+/*!
  * Header and Menu
  */
 
@@ -172,6 +191,9 @@ header{
       #menu-top-right{
         float: right;
         right: 0px;
+      }
+      #menu-top-left{
+        padding-left: 10px;
       }
     }
     .logo-holder{

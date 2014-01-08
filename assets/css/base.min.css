@@ -7392,6 +7392,9 @@ td.visible-print {
 }
 .ec-info-box .circle-icon {
   border-radius: 50%;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
   box-shadow: 0 0 0 4px #f2f2f2;
   height: 60px;
   margin: 0 auto;
@@ -7426,6 +7429,9 @@ td.visible-print {
   transition: all 0.2s linear;
   background: #f2f2f2;
   border-radius: 50%;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
   content: '';
   height: 64px;
   left: -2px;
@@ -7507,6 +7513,20 @@ body {
 body img {
   width: 100%;
   height: auto;
+}
+/*!
+ * Boxed Layout
+ */
+.boxed.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.boxed .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
 }
 /*!
  * Header and Menu
@@ -7650,6 +7670,9 @@ header.default .top-nav .gp-top-nav li a:hover {
 header.default .top-nav #menu-top-right {
   float: right;
   right: 0px;
+}
+header.default .top-nav #menu-top-left {
+  padding-left: 10px;
 }
 header.default .logo-holder {
   padding: 0;

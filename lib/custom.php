@@ -57,7 +57,7 @@ class GeoPoint
 		$less->addVariable('siteBgColor', $this->theme_options['site_bg_color']);
 		$less->addVariable('accentColor', $this->theme_options['accent_color']);
 		$less->addVariable('borderColor', $this->theme_options['border_color']);
-
+		$less->addVariable('boxBgColor',  $this->theme_options['box_bg_color']);
 	}
 }
 new GeoPoint;

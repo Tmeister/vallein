@@ -68,7 +68,7 @@ $args['page_title']             = __('GeoPoint Options', 'geopoint');
 $args['page_slug']              = 'geopoint_options';
 $args['default_show']           = true;
 $args['default_mark']           = '*';
-$args['show_import_export']     = false;
+$args['show_import_export']     = true;
 $args['share_icons']['twitter'] = array(
     'link' => 'http://twitter.com/enriquestore',
     'title' => 'Follow me on Twitter',
@@ -106,12 +106,31 @@ $sections[] = array(
     'icon_class' => 'icon-large',
     'title'      => __('General Settings', 'geopoint'),
     'fields'     => array(
+    	array(
+    		'id'       => 'layout',
+            'type'     => 'select',
+            'title'    => __('Site Layout.', 'geopoint'),
+            'subtitle' => __('Select the site layout, Boxed or Fluid.', 'geopoint'),
+            'options' => array(
+                'fluid' => 'Fluid',
+                'boxed' => 'Boxed'
+            ),
+            'default' => 'fluid'
+    	),
         array(
             'id'       => 'site_bg_color',
             'type'     => 'color',
             'default'  => '#ffffff',
             'title'    => __('Site Background Color.', 'geopoint'),
             'subtitle' => __('Select main color to use as background for the entired site.', 'geopoint'),
+        ),
+        array(
+        	'id'       => 'box_bg_color',
+            'type'     => 'color',
+            'default'  => '#ffffff',
+            'title'    => __('Box Background Color.', 'geopoint'),
+            'subtitle' => __('Select color to use as background for the boxed content.', 'geopoint'),
+            'required' => array('layout', '=' , 'boxed')
         ),
         array(
             'id'       => 'accent_color',
