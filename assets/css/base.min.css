@@ -7522,10 +7522,6 @@ body img {
   padding-right: 0px;
 }
 .boxed .container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0px;
-  padding-right: 0px;
   width: 100%;
 }
 /*!
@@ -7680,6 +7676,27 @@ header.default .logo-holder {
 header.default .logo-holder a img {
   max-height: 80px !important;
   width: auto;
+}
+/*!
+ * Toogle
+ */
+h4.wpb_toggle {
+  background-position: 20px center !important;
+  border-radius: 2px;
+  font-size: 1.3em !important;
+  font-weight: 400;
+  margin-bottom: 5px;
+  padding: 15px 0 17px 50px !important;
+}
+/*!
+ * Accordion
+ */
+.wpb_accordion_header {
+  font-size: 1.3em !important;
+  font-weight: 400;
+}
+.wpb_accordion_section {
+  margin-bottom: 5px;
 }
 .no-padding {
   padding: 0px;

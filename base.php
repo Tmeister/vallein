@@ -19,7 +19,12 @@
 	?>
 
   	<div class="wrap" role="document">
-    	<div class="content">
+  		<?php if (is_page()): ?>
+  			<div class="content">
+  		<?php else: ?>
+  			<div class="content container">
+  		<?php endif ?>
+
 
 			<main class="main <?php echo roots_main_class(); ?> no-padding" role="main">
 				<?php include roots_template_path(); ?>

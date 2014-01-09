@@ -22,7 +22,7 @@ function roots_main_class()
 	global $theme_options;
 	if (roots_display_sidebar() && $theme_options['layout'] != 1) {
 		// Classes on pages with the sidebar
-		$class = 'col-sm-8';
+		$class = 'col-sm-9';
 	}
 	else {
 		// Classes on full width pages
@@ -37,7 +37,7 @@ function roots_main_class()
 function roots_sidebar_class()
 {
 
-	return 'col-sm-4';
+	return 'col-sm-3';
 }
 /**
  * Define which pages shouldn't have the sidebar

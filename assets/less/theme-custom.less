@@ -20,21 +20,21 @@
 * Default color for Info Messages Section
 */
 
-@messageInfoBg = #bceeff;
-@messageInfoColor = #21c2f8;
-@messageInfoBorder = #8ae1ff;
+@messageInfoBg = #D9EDF7;
+@messageInfoColor = #3A87AF;
+@messageInfoBorder = #bce8f1;
 
-@messageSuccessBg = #c1faa8;
-@messageSuccessColor = #6db74c;
-@messageSuccessBorder = #9cff70;
+@messageSuccessBg = #dff0d8;
+@messageSuccessColor = #468847;
+@messageSuccessBorder = #d6e9c6;
 
-@messageErrorBg = #ffcdc7;
-@messageErrorColor = #ff391f;
-@messageErrorBorder = #dcdcdc;
+@messageErrorBg = #f2dede;
+@messageErrorColor = #b94a48;
+@messageErrorBorder = #eed3d7;
 
-@messageWarningBg = #fff4bb;
-@messageWarningColor = #e99b00;
-@messageWarningBorder = #ffcc66;
+@messageWarningBg = #fcf8e3;
+@messageWarningColor = #c09853;
+@messageWarningBorder = #fbeed5;
 
 
 
@@ -50,11 +50,12 @@ body {
 		}
 	}
 }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+	font-family: @siteFontFamily;
+}
 .boxed{
 	background: @boxBgColor;
 	box-shadow: 0px 0px 10px rgba(0,0,0, .2);
-	margin-top: 30px;
-	margin-bottom: 30px;
 	header{
 		box-shadow: 0px 0px 0px rgba(0,0,0, .1);
 	}
@@ -273,7 +274,7 @@ header{
 			border-top: 1px solid @accentColor;
 			font-size: 1.3em !important;
 			font-weight: 400;
-			margin: 0 3px 0 0 !important;
+			margin: 5px 3px 0 0 !important;
 			position: relative;
 			top:1px !important;
 			a{
@@ -321,16 +322,14 @@ header{
 			a{
 				color: @accentColor !important;
 				padding: .5em 1em!important;
+				border: 1px solid @borderColor !important;
 			}
 			&.ui-tabs-active{
 				background-color: @accentColor !important;
-				border-bottom: 1px solid @accentColor;
-				border-left: 1px solid @accentColor;
-				border-right: 1px solid @accentColor;
-				border-top: 1px solid @accentColor;
 				top: 1px;
 				a{
 					color: @siteBgColor !important;
+					border: 1px solid @accentColor !important;
 				}
 			}
 		}
@@ -430,6 +429,52 @@ header{
 	}
 }
 
+
+/*!
+ * Toogle
+ */
+
+h4{
+	&.wpb_toggle{
+		border: 1px solid @borderColor;
+		color: @accentColor;
+	}
+}
+
+/*!
+ * Accordion
+ */
+.wpb_accordion_header{
+	background-color: @siteBgColor !important;
+	border: 1px solid @borderColor;
+	color: @accentColor;
+}
+
+
+
+/*!
+ * Posts Grid
+ */
+.wpb_teaser_grid{
+	margin-top: 1em;
+	ul.wpb_thumbnails{
+		li{
+			border: 1px solid @borderColor;
+			padding: 15px !important;
+			background-color: white;
+			h2{
+				font-size: 1.5em;
+				margin-top: 15px !important;
+			}
+			.entry-content{
+				margin-bottom: 10px;
+			}
+			.vc_read_more{
+				font-size: .8em;
+			}
+		}
+	}
+}
 
 /* ==========================================================================
    Primary Content

@@ -53,6 +53,7 @@ class GeoPoint
 		$font_color = $font['color'];
 		$less = WPLessPlugin::getInstance();
 		$less->addVariable('siteFont', "$site_font");
+		$less->addVariable('siteFontFamily', $font['font-family']);
 		$less->addVariable('siteFontColor', "$font_color");
 		$less->addVariable('siteBgColor', $this->theme_options['site_bg_color']);
 		$less->addVariable('accentColor', $this->theme_options['accent_color']);
