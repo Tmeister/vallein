@@ -147,8 +147,6 @@ $sections[] = array(
             'subtitle' => __('Select border color to use in the site. This color will be use in the tabs, accordions borders around the site.', 'geopoint'),
         ),
 
-
-
         array(
 			'id'=>'site_typo',
 			'type' => 'typography',
@@ -193,11 +191,6 @@ $sections[] = array(
 
     )
 );
-
-
-
-
-
 
 if(file_exists(trailingslashit(dirname(__FILE__)) . 'README.html')) {
     $tabs['docs'] = array(

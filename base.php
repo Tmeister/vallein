@@ -19,6 +19,7 @@
 	?>
 
   	<div class="wrap" role="document">
+  		<?php get_template_part('templates/titles'); ?>
   		<?php if (is_page()): ?>
   			<div class="content">
   				<div class="inner">
@@ -26,7 +27,6 @@
   			<div class="content container">
   				<div class="inner bloged">
   		<?php endif ?>
-
 				<main class="main <?php echo roots_main_class(); ?> no-padding" role="main">
 					<?php include roots_template_path(); ?>
 				</main><!-- /.main -->

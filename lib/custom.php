@@ -22,9 +22,7 @@ class GeoPoint
 	{
 		global $theme_options;
 		$this->theme_options = $theme_options;
-		add_action('after_setup_theme', array(&$this,
-			'add_theme_menus'
-		));
+		add_action('after_setup_theme', array(&$this, 'add_theme_menus' ));
 		$this->config_less();
 	}
 	function add_theme_menus()
@@ -33,7 +31,13 @@ class GeoPoint
 			'top_left_navigation' => __('Top Left Navigation', 'geopoint') ,
 			'top_right_navigation' => __('Top right Navigation', 'geopoint') ,
 		));
+
+		add_image_size( 'blog-featured', 770, 430, true );
+		add_image_size( 'search-featured', 510, 380, true );
+		add_theme_support( 'post-formats', array( 'gallery', 'aside', 'chat', 'image', 'quote', 'status', 'video', 'audio' ) );
+
 	}
+
 	function config_less()
 	{
 		if (class_exists('WPLessPlugin')) {
@@ -62,3 +66,11 @@ class GeoPoint
 	}
 }
 new GeoPoint;
+
+//Global Helpers
+
+function is_blog_home () {
+global $post;
+	$posttype = get_post_type($post );
+	return ( (is_author()) ||  (is_home()) || (is_tag()) && ( $posttype == 'post') ) ? true : false ;
+}

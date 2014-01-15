@@ -36,7 +36,8 @@
 @messageWarningColor = #c09853;
 @messageWarningBorder = #fbeed5;
 
-
+//TODO
+@headerFontColor = #444;
 
 body {
 	background: @siteBgColor;
@@ -50,8 +51,21 @@ body {
 		}
 	}
 }
+
+::selection {
+	background: @accentColor;
+	color: white;
+	text-shadow: none;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 	font-family: @siteFontFamily;
+	color: @headerFontColor;
+}
+form{
+	label{
+		color: @headerFontColor;
+	}
 }
 .boxed{
 	background: @boxBgColor;
@@ -65,7 +79,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 blockquote{
 	font-style: italic !important;
 	border-left: 5px solid @accentColor;
-	background-color: #f6f6f6;
+	background-color: rgba(0,0,0, 0.02);
 	font-size: 1.05em;
 	p{
 		font-size: 1.05em;
@@ -123,14 +137,13 @@ header{
 					&:focus{
 						color: @menuColorHover;
 						color: @accentColor;
-						background-color: rgba(0, 0, 0, .01);
+						background-color: rgba(0, 0, 0, .03);
 					}
                 }
                 &.active{
 					a{
 						color: @menuColorHover;
-						color: rgba(255, 255, 255, 1);
-						background-color: rgba(0, 0, 0, 0.1) !important;
+						background-color: rgba(0, 0, 0, 0.03) !important;
                   	}
                 }
             }
@@ -138,23 +151,6 @@ header{
       }
    }
    &.search-on-top{
-      .search-form{
-         .form-control
-         {
-            background-image: url( '@{template_directory_uri}/assets/img/search-icon@2x.png');
-            background-color: #f5f5f5;
-            background-repeat: no-repeat;
-            background-size: 14px 14px;
-            background-position: 98% center;
-         }
-         .search-submit{
-            &.btn-default{
-               color:white;
-               background: @accentColor;
-               border: 1px solid @accentColor;
-            }
-         }
-      }
       .gp-top-nav{
          li{
             a{
@@ -176,6 +172,23 @@ header{
          }
       }
    }
+}
+.search-form{
+ .form-control
+ {
+    background-image: url( '@{template_directory_uri}/assets/img/search-icon@2x.png');
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 98% center;
+ }
+ .search-submit{
+    &.btn-default{
+       color: white;
+       background: @accentColor;
+       border: 1px solid @accentColor;
+    }
+ }
 }
 
 /*!
@@ -476,24 +489,175 @@ h4{
 	}
 }
 
-/* ==========================================================================
-   Primary Content
-   ========================================================================== */
 
-.main { }
+/*!
+ * Blog
+ */
+.bloged{
+	h2{
+		&.entry-title{
+			a{
+				color: @headerFontColor;
+				&:hover{
+					color: @accentColor;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	img{
+		border: 1px solid @borderColor;
+	}
+
+	.main{
+		article{
+		}
+	}
+	article{
+		header{
+			.is_sticky{
+				background-color: @accentColor;
+				color: white;
+			}
+		}
+	}
+	.post-meta{
+		color:#888;
+		.byline{
+			span{
+				&.cats{
+					a{
+						border: 1px solid @borderColor;
+						&:hover{
+							background-color: @accentColor;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+	.entry-content{
+		span{
+			&.cats{
+				a{
+					border: 1px solid @borderColor;
+					&:hover{
+						background-color: @accentColor;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+	.entry-meta-bottom{
+		border-bottom: 1px solid @borderColor;
+		border-top: 1px solid @borderColor;
+		color: #888;
+	}
+	.page-nav{
+		border-top: 1px solid @borderColor;
+		color: #888;
+	}
+	.posts-nav{
+		color: #888;
+		border-bottom: 1px solid @borderColor;
+	}
+	.post-author{
+		border-bottom: 1px solid @borderColor;
+	}
+
+	#comments{
+		border-bottom: 1px solid @borderColor;
+		.comment-reply-link{
+			border: 1px solid @borderColor;
+			&:hover{
+				background-color: @accentColor;
+				color:white;
+			}
+		}
+	}
+}
+
+.sidebar{
+	h3{
+		&:after{
+			background-color: @borderColor;
+		}
+	}
+}
+
+.tagcloud{
+	a{
+		border: 1px solid @borderColor;
+		&:hover{
+			background-color: @accentColor;
+			color:white;
+		}
+	}
+}
+
+.search{
+	article{
+		border-bottom: 1px solid @borderColor;
+	}
+}
+
+
+.btn-primary,
+.btn-default {
+	background-color: @accentColor;
+	color:white;
+	&:hover{
+		background-color: @accentColor;
+	}
+}
+
+
+
+table, th, td{
+	border: 1px solid white;
+}
+
+table{
+
+	tr{
+		&:nth-child(2n+1){
+			background-color: rgba(0,0,0,.02);
+		}
+		&:nth-child(2n){
+			background-color: rgba(0,0,0,.01);
+		}
+		th{
+			color:white;
+			background-color: @accentColor;
+		}
+	}
+}
+
 
 /* Gallery Shortcode */
 .gallery-row { padding: 15px 0; }
 
 
+h2{
+	&.entry-title{
+		border-bottom: 1px solid @borderColor;
+		padding-bottom: 20px;
+		&:after{
+			color:@accentColor;
+		}
+	}
+}
 
 /* ==========================================================================
-   Sidebar
+   Posts Formats
    ========================================================================== */
-
-.sidebar { }
-
-
+.format-aside{
+	background-color: @accentColor;
+	color: white;
+}
 
 /* ==========================================================================
    Posts
@@ -504,28 +668,4 @@ h4{
 .hentry .byline { }
 .hentry .entry-content { }
 .hentry footer { }
-
-
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-
 .content-info { }
-
-
-
-/* ==========================================================================
-   WordPress Generated Classes
-   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
-   ========================================================================== */
-
-.aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
-.alignright { float: right; }
-figure.alignnone { margin-left: 0; margin-right: 0; }
-.wp-caption{text-align: left;}
-.wp-caption-text {text-align: left;}
-.gallery-caption {text-align: left;}
-.bypostauthor{text-align: left;}
-
