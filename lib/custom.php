@@ -51,7 +51,11 @@ class GeoPoint
 	}
 	function set_less_variables()
 	{
+		if(!isset($this->theme_options['site_typo'])){
+			return;
+		}
 		$font = $this->theme_options['site_typo'];
+		//var_dump($font);
 		$site_font = $font['font-weight'] .' ' . $font['font-size']. ' "' . $font['font-family'] .'", Arial, Helvetica, sans-serif';
 		//var_dump($site_font);
 		$font_color = $font['color'];

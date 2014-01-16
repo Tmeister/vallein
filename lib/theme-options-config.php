@@ -161,9 +161,9 @@ $sections[] = array(
 			'units'=>'px', // Defaults to px
 			'subtitle'=> __('Typography option with each property can be called individually.', 'geopoint'),
 			'default'=> array(
-				'color'=>"#838383",
-				'font-style'=>'300',
-				'font-family'=>'Open Sans',
+				'color'=>"#232323",
+				'font-weight'=>'300',
+				'font-family'=>'Raleway',
 				'google' => true,
 				'font-size'=>'16px',
 				'line-height'=>'40px',
@@ -191,6 +191,39 @@ $sections[] = array(
 
     )
 );
+
+/******************************************************************************
+* Blog Settings Tab
+******************************************************************************/
+
+$sections[] = array(
+    'icon'       => 'el-icon-website',
+    'icon_class' => 'icon-large',
+    'title'      => __('Blog Settings', 'geopoint'),
+    'fields'     => array(
+    	array(
+            'id'       =>'show_author_bio',
+            'type'     => 'select',
+            'title'    => __('Author Bio', 'geopoint'),
+            'subtitle' => __('Show Author Bio', 'geopoint'),
+            'desc'     => __('Select if you want to show the post author bio in the single post view.', 'geopoint'),
+            'options' => array(
+                'yes' => 'Yes',
+                'no' => 'No'
+            ),
+            'default' => 'yes'
+        ),
+        array(
+            'id'       => 'blog_header_image',
+            'type'     => 'media',
+            'url'      => true,
+            'title'    => __('Blog Header Image.', 'geopoint'),
+            'subtitle' => __('sub', 'geopoint'),
+            'desc'		=> __('desc', 'geopoint'),
+        ),
+    )
+);
+
 
 if(file_exists(trailingslashit(dirname(__FILE__)) . 'README.html')) {
     $tabs['docs'] = array(

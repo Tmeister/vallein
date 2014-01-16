@@ -1,3 +1,6 @@
+<?php
+	global $theme_options;
+?>
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
  	<header>
@@ -32,20 +35,22 @@
 		</div>
 		<div class="clearfix"></div>
     </footer>
-    <div class="post-author">
-    	<h3><?php echo __('About Post Author', 'roots'); ?></h3>
-    	<div class="post-author-avatar col-sm-2 no-padding-left no-padding-right"><?php echo get_avatar( get_the_author_meta( 'ID' ), 180 ); ?></div>
-    	<div class="author-info col-sm-10 no-padding-right">
-    		<div class="post-author-name">
-	    		<h4 class="no-margin-top"><?php the_author_posts_link(); ?></h4>
+	<?php if ($theme_options['show_author_bio'] == 'yes'): ?>
+		<div class="post-author">
+	    	<h3><?php echo __('About Post Author', 'roots'); ?></h3>
+	    	<div class="post-author-avatar col-sm-2 no-padding-left no-padding-right"><?php echo get_avatar( get_the_author_meta( 'ID' ), 180 ); ?></div>
+	    	<div class="author-info col-sm-10 no-padding-right">
+	    		<div class="post-author-name">
+		    		<h4 class="no-margin-top"><?php the_author_posts_link(); ?></h4>
+		    	</div>
+		    	<div class="post-author-description">
+		    		<?php echo get_the_author_meta('description'); ?>
+		    	</div>
 	    	</div>
-	    	<div class="post-author-description">
-	    		<?php echo get_the_author_meta('description'); ?>
-	    	</div>
-    	</div>
-    	<div class="clearfix"></div>
-    </div>
-	<div class="clearfix"></div>
+	    	<div class="clearfix"></div>
+	    </div>
+		<div class="clearfix"></div>
+	<?php endif ?>
     <?php comments_template('/templates/comments.php'); ?>
   </article>
 <?php endwhile; ?>
