@@ -201,7 +201,25 @@ $sections[] = array(
     'icon_class' => 'icon-large',
     'title'      => __('Blog Settings', 'geopoint'),
     'fields'     => array(
-    	array(
+        array(
+            'id'       => 'blog_header_image',
+            'type'     => 'media',
+            'url'      => true,
+            'title'    => __('Blog Header Image.', 'geopoint'),
+            'subtitle' => __('Select a image to use as the blog header background', 'geopoint'),
+        ),
+        array(
+            'id'       =>'blog_list_format',
+            'type'     => 'select',
+            'title'    => __('Blog List Format', 'geopoint'),
+            'desc' => __('Select if you want to show the full post content or the excerpt in the blog post list', 'geopoint'),
+            'options' => array(
+                'full-post' => 'Full Content',
+                'excerpt' => 'Excerpt'
+            ),
+            'default' => 'full-post'
+        ),
+        array(
             'id'       =>'show_author_bio',
             'type'     => 'select',
             'title'    => __('Author Bio', 'geopoint'),
@@ -212,14 +230,6 @@ $sections[] = array(
                 'no' => 'No'
             ),
             'default' => 'yes'
-        ),
-        array(
-            'id'       => 'blog_header_image',
-            'type'     => 'media',
-            'url'      => true,
-            'title'    => __('Blog Header Image.', 'geopoint'),
-            'subtitle' => __('sub', 'geopoint'),
-            'desc'		=> __('desc', 'geopoint'),
         ),
     )
 );

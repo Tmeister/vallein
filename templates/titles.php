@@ -1,5 +1,12 @@
-<?php if (!is_front_page() ): ?>
-	<div class="page-title">
+<?php
+	global $theme_options;
+	$blogHeader = '';
+	if(isset( $theme_options['blog_header_image']['url'] )){
+		$blogHeader = $theme_options['blog_header_image']['url'];
+	}
+?>
+<?php if (!is_front_page() && (! is_page() ) ): ?>
+	<div class="page-title" style="background-image: url('<?php echo $blogHeader ?>')">
 		<div class="container">
 			<h2>
 				<?php if (is_search()): ?>

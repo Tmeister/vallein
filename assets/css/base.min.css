@@ -7912,6 +7912,9 @@ h4.wpb_toggle {
 .page-title {
   background-color: #888;
   margin-bottom: 1em;
+  background-position: top 50%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .page-title h2 {
   color: white;
@@ -8014,6 +8017,9 @@ h2.entry-title:after {
 }
 .type-page h2.entry-title:after {
   content: "";
+}
+.type-download h2.entry-title:after {
+  content: "";
 }
 /*
 /* ==========================================================================

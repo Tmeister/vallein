@@ -23,6 +23,7 @@ class GeoPoint
 		global $theme_options;
 		$this->theme_options = $theme_options;
 		add_action('after_setup_theme', array(&$this, 'add_theme_menus' ));
+		add_filter('roots_display_sidebar', array(&$this, 'is_download' ) );
 		$this->config_less();
 	}
 	function add_theme_menus()
@@ -36,6 +37,16 @@ class GeoPoint
 		add_image_size( 'search-featured', 510, 380, true );
 		add_theme_support( 'post-formats', array( 'gallery', 'aside', 'chat', 'image', 'quote', 'status', 'video', 'audio' ) );
 
+	}
+
+
+	function is_download($show)
+	{
+		if( 'download' == get_post_type() && is_single() ){
+			$show = false;
+		}
+
+		return $show;
 	}
 
 	function config_less()

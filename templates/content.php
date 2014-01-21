@@ -1,3 +1,7 @@
+<?php
+	global $theme_options;
+	$blog_list_format = $theme_options['blog_list_format'];
+?>
 <?php if ( is_search()  || is_archive() ): ?>
 
 	<article <?php post_class(); ?>>
@@ -16,7 +20,6 @@
 	    </div>
 	    <div class="clearfix"></div>
 	</article>
-
 
 <?php else : ?>
 
@@ -40,7 +43,7 @@
 	    </div>
 	  </header>
 	  <div class="entry-summary">
-	    <?php the_content(); ?>
+	    <?php ( $blog_list_format == 'full-post' ) ? the_content() : the_excerpt(); ?>
 	  </div>
 	  <?php get_template_part('templates/entry-meta-bottom'); ?>
 	</article>
