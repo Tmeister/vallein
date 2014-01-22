@@ -7908,6 +7908,7 @@ h4.wpb_toggle {
 .archive article .description.small {
   float: right;
   width: 62%;
+  font-size: 1em;
 }
 .page-title {
   background-color: #888;

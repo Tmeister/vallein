@@ -22,10 +22,11 @@ class GeoPoint
 	{
 		global $theme_options;
 		$this->theme_options = $theme_options;
-		add_action('after_setup_theme', array(&$this, 'add_theme_menus' ));
-		add_filter('roots_display_sidebar', array(&$this, 'is_download' ) );
+		add_action( 'after_setup_theme', 		array(&$this, 'add_theme_menus' ));
+		add_filter( 'roots_display_sidebar', 	array(&$this, 'is_download' ));
 		$this->config_less();
 	}
+
 	function add_theme_menus()
 	{
 		register_nav_menus(array(
