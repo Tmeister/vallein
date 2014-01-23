@@ -673,3 +673,71 @@ h2{
 .hentry .entry-content { }
 .hentry footer { }
 .content-info { }
+
+/* ==========================================================================
+	EDD - Shop
+   ========================================================================== */
+.ec-edd-submit-button{
+	background-color:@siteBgColor;
+	border-color:@borderColor;
+	color: @borderColor;
+	&:hover{
+		background-color:@accentColor;
+		border-color:@siteBgColor;
+		color: @siteBgColor;
+	}
+}
+
+
+.ec_edd_download_inner{
+	border-color: @borderColor;
+	&:hover{
+		box-shadow: 0px 5px 7px @borderColor;
+	}
+	.data{
+		.mask{
+			text-align: center;
+			.edd-submit{
+				&.button{
+					&.flat{
+						background-color: rgba(0,0,0,.5);
+						color:white;
+						border-color: rgba(0,0,0,.6);
+						margin-top: 32%;
+						&:hover{
+							background-color: rgba(0,0,0,.75);
+						}
+					}
+				}
+			}
+		}
+	}
+	.details{
+		h3{
+			a{
+				color: @siteFontColor;
+				&:hover{
+					color:@accentColor;
+					text-decoration: none;
+				}
+			}
+			border-bottom: 1px dashed @borderColor;
+		}
+		.title{
+			margin-bottom: 1em;
+		}
+		.edd-submit{
+			&.button{
+				&.flat{
+					.ec-edd-submit-button();
+				}
+			}
+		}
+	}
+}
+
+.edd_price_options {
+	label {
+		border-color: @borderColor;
+	}
+}

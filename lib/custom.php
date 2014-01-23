@@ -36,6 +36,7 @@ class GeoPoint
 
 		add_image_size( 'blog-featured', 770, 430, true );
 		add_image_size( 'search-featured', 510, 380, true );
+		add_image_size( 'shop-featured', 530, 390, true );
 		add_theme_support( 'post-formats', array( 'gallery', 'aside', 'chat', 'image', 'quote', 'status', 'video', 'audio' ) );
 
 	}

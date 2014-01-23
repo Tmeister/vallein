@@ -7517,6 +7517,14 @@ body img {
   max-width: 100% !important;
   height: auto;
 }
+body a {
+  -webkit-transition: color 0.25s linear;
+  transition: color 0.25s linear;
+}
+body a:hover {
+  -webkit-transition: color 0.25s linear;
+  transition: color 0.25s linear;
+}
 /*!
  * Boxed Layout
  */
@@ -8022,7 +8030,105 @@ h2.entry-title:after {
 .type-download h2.entry-title:after {
   content: "";
 }
-/*
+/* ==========================================================================
+	EDD - Shop
+   ========================================================================== */
+.ec_edd_download_inner {
+  border: 1px solid white;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  margin-bottom: 2em;
+}
+.ec_edd_download_inner:hover {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.ec_edd_download_inner .details {
+  padding: 0 10px;
+  text-align: center;
+}
+.ec_edd_download_inner .details h3 {
+  font-size: 1em;
+  margin: 0px !important;
+  padding: 1.5em 0;
+}
+.ec_edd_download_inner .buy-btn {
+  margin: 1.5em 0;
+}
+.ec_edd_download_inner:hover .data .mask {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.ec_edd_download_inner:hover .data .mask .edd-submit.button.flat {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.ec_edd_download_inner .data {
+  position: relative;
+}
+.ec_edd_download_inner .data .mask {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ec_edd_download_inner .data .mask .edd_download_excerpt {
+  color: white;
+  font-size: .80em;
+  text-align: center;
+  padding: 1em;
+  line-height: 1.5em;
+}
+.ec_edd_download_inner .data .mask .edd-submit.button.flat {
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+.ec_edd_download_inner .data .mask .edd-submit.button.flat:hover {
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+.edd_purchase_submit_wrapper .edd-submit.button.flat {
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+.edd_purchase_submit_wrapper .edd-submit.button.flat:hover {
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+.edd_purchase_submit_wrapper .edd-cart-added-alert {
+  left: 25%;
+  top: -25px;
+  font-size: .85em;
+}
+.edd_price_options label {
+  border-bottom: 1px dashed #3b4049;
+  width: 100%;
+  text-align: left;
+  font-size: .85em;
+  font-weight: 300;
+}
+.edd_price_options .edd_price_option_price {
+  float: right;
+}
+.edd_price_options .edd_price_option_name {
+  padding-left: 10px !important;
+}
+.edd_price_options .edd_price_option_sep {
+  display: none !important;
+}
 /* ==========================================================================
    General Classes & Elements
    ========================================================================== */
