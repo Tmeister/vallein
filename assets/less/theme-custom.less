@@ -58,6 +58,20 @@ body {
 	text-shadow: none;
 }
 
+input,
+textarea,
+isindex,
+keygen,
+select{
+	border: 1px solid @borderColor;
+}
+
+input{
+	&:focus{
+		border: 1px solid @accentColor;
+	}
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 	font-family: @siteFontFamily;
 	color: @headerFontColor;
@@ -678,13 +692,13 @@ h2{
 	EDD - Shop
    ========================================================================== */
 .ec-edd-submit-button{
-	background-color:@siteBgColor;
+	background-color:transparent;
 	border-color:@borderColor;
 	color: @borderColor;
 	&:hover{
 		background-color:@accentColor;
-		border-color:@siteBgColor;
-		color: @siteBgColor;
+		border-color:@accentColor;
+		color: white;
 	}
 }
 
@@ -739,5 +753,120 @@ h2{
 .edd_price_options {
 	label {
 		border-color: @borderColor;
+	}
+}
+
+.edd_purchase_submit_wrapper{
+	.edd-submit{
+		&.button{
+			&.flat{
+				.ec-edd-submit-button();
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+	EDD - Single Download
+   ========================================================================== */
+.single-download{
+	.description{
+		.edd_purchase_submit_wrapper{
+			.edd-submit{
+				&.button{
+					&.flat{
+						.ec-edd-submit-button();
+					}
+				}
+			}
+		}
+	}
+	.excerpt{
+		margin-top: 1em;
+	}
+	.full-description{
+		.tab{
+			ul{
+				li{
+					background-color: @accentColor;
+					color: white;
+				}
+			}
+		}
+		.divider{
+			height: 5px;
+			background-color: @accentColor;
+		}
+		.product-description{
+			border: 1px solid @borderColor;
+			border-top: none;
+		}
+	}
+}
+
+ /* ==========================================================================
+	EDD - Checkout
+   ========================================================================== */
+
+#edd_checkout_cart {
+	tr{
+		background: white !important;
+	}
+	th, td{
+		background: white !important;
+		border-top-color:@siteBgColor !important;
+		border-left-color:@siteBgColor !important;
+		border-right-color:@siteBgColor !important;
+
+	}
+	.edd_cart_header_row{
+		th{
+			color: @borderColor;
+			text-transform: uppercase;
+			font-size: .85em;
+		}
+	}
+	.edd-submit{
+		&.button{
+			.ec-edd-submit-button();
+		}
+	}
+}
+#edd_purchase_form{
+	.edd-submit{
+		&.button{
+			.ec-edd-submit-button();
+		}
+	}
+}
+
+#edd_checkout_form_wrap{
+	.wrapper{
+		border-bottom: 1px solid @borderColor;
+		border-left: 1px solid @borderColor;
+		border-right: 1px solid @borderColor;
+		border-top: 0 none;
+	}
+	.divider{
+		background: @accentColor;
+		height: 5px;
+	}
+
+	#edd-payment-mode-wrap{
+		.edd-payment-mode-label{
+			background: @accentColor;
+			color: white;
+			min-width: 300px;
+		}
+	}
+	legend{
+		background: @accentColor;
+		color: white;
+	}
+
+	fieldset{
+		&#edd_cc_fields{
+			background: @siteBgColor;
+		}
 	}
 }
